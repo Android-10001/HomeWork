@@ -6,22 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.logindemo.R;
 import com.example.logindemo.model.LoginModel;
 import com.example.logindemo.presenter.LoginPresenter;
 
-public class LoginActivity extends AppCompatActivity implements ILoginView{
+public class RegActivity extends AppCompatActivity implements IRegView{
     private EditText name;
     private EditText pwd;
-    private ProgressBar bar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_reg);
         initDatas();
     }
     private void initDatas() {
@@ -29,25 +26,14 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
 
         pwd = findViewById (R.id.pwd);
 
-        bar = findViewById (R.id.bar);
-
-        Button login = findViewById (R.id.login);
-
-        login.setOnClickListener (new View.OnClickListener () {
-            @Override
-            public void onClick(View v) {
-                LoginPresenter presenterImpel = new LoginPresenter();
-
-                presenterImpel.ShowLoginToView (new LoginModel(),LoginActivity.this);
-            }
-        });
-
         Button reg = findViewById (R.id.reg);
 
         reg.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View v) {
-                startActivity (new Intent(LoginActivity.this,RegActivity.class));
+                LoginPresenter presenterImpel = new LoginPresenter();
+
+                presenterImpel.ShowRegToView (new LoginModel(),RegActivity.this);
             }
         });
     }
@@ -64,14 +50,13 @@ public class LoginActivity extends AppCompatActivity implements ILoginView{
 
     @Override
     public void showSuccess() {
-        /*  bar.set*/
-        bar.setVisibility (ProgressBar.VISIBLE);
-        Toast.makeText (LoginActivity.this,"登录成功··跳转页面",Toast.LENGTH_SHORT).show ();
+        Toast.makeText (this,"注册成功--",Toast.LENGTH_SHORT).show ();
+
+        startActivity (new Intent(RegActivity.this,LoginActivity.class));
     }
 
     @Override
     public void showError() {
-        bar.setVisibility (ProgressBar.GONE);
-        Toast.makeText (LoginActivity.this,"登录失败··",Toast.LENGTH_SHORT).show ();
+        Toast.makeText (this,"注册失败--",Toast.LENGTH_SHORT).show ();
     }
 }

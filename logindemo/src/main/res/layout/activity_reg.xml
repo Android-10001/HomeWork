@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.LoginActivity">
-
+    tools:context=".view.RegActivity">
     <EditText
         android:id="@+id/name"
         android:layout_marginTop="100dp"
@@ -21,32 +20,12 @@
         android:layout_width="230dp"
         android:layout_height="40dp" />
 
-    <ProgressBar
-        android:id="@+id/bar"
+    <Button
         android:layout_below="@id/pwd"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/reg"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        />
-
-    <LinearLayout
-        android:layout_below="@id/pwd"
-        android:layout_width="match_parent"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="35dp"
-        android:layout_height="40dp">
-        <Button
-            android:id="@+id/login"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="login"/>
-
-        <Button
-            android:id="@+id/reg"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="reg"/>
-    </LinearLayout>
-
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="reg"/>
 </RelativeLayout>
