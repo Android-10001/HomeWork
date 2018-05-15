@@ -9,7 +9,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/greendaolx" />
             <option value="$PROJECT_DIR$/logindemo" />
+            <option value="$PROJECT_DIR$/retrofit" />
+            <option value="$PROJECT_DIR$/rxjavademo" />
+            <option value="$PROJECT_DIR$/xrecycleview" />
+            <option value="$PROJECT_DIR$/xrecycleview2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

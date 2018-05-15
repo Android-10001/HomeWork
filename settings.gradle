@@ -1,1 +1,1 @@
-include ':app', ':logindemo'
+include ':app', ':logindemo', ':xrecycleview', ':xrecycleview2', ':retrofit', ':greendaolx', ':rxjavademo'
